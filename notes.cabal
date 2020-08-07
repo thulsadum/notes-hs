@@ -1,0 +1,74 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: aec2c809a3c7ab85f0f93fbbb68f56c2c607eb1b8919039a92e401a8125752ca
+
+name:           notes
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/thulsadum/notes#readme>
+homepage:       https://github.com/thulsadum/notes#readme
+bug-reports:    https://github.com/thulsadum/notes/issues
+author:         Sebastian Claus
+maintainer:     sbstncls@gmail.com
+copyright:      Apache 2.0
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/thulsadum/notes
+
+library
+  exposed-modules:
+      Notes
+  other-modules:
+      Paths_notes
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , hspec
+    , strict
+    , time
+  default-language: Haskell2010
+
+executable notes-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_notes
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , hspec
+    , notes
+    , strict
+    , time
+  default-language: Haskell2010
+
+test-suite notes-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_notes
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , hspec
+    , notes
+    , strict
+    , time
+  default-language: Haskell2010
